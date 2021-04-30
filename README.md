@@ -1,2 +1,2 @@
 # Ecommerce
- Ecommerce HTML - CSS - JAVASCRIPT
+ Ecommerce HTML - CSS - JAVASCRIPT(JQUERY)
