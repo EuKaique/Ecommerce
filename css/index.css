@@ -673,8 +673,15 @@ footer .credit span{
 }
 
 @media screen and (max-width: 420px) and (min-height: 360px){
-    header{
-        width: 105%;
+    html,body{
+        margin: 0 !important;
+        width: 104%;
+    }
+    .home .home-slider .item .content h3 {
+        color: #fff;
+        text-shadow: 0 0.3rem 0.5rem #000;
+        font-size: 3rem;
+        text-transform: uppercase;
     }
     header .header-2 .navbar ul {
         flex-flow: column;
@@ -686,16 +693,9 @@ footer .credit span{
         margin-top: 22%;
     }
     header .header-2 .nav-toggle {
-        top: 10%;
+        top: 12%;
         left: 45%;
         opacity: 1;
-    }
-
-    .home{
-        width: 105%;
-    }
-    .owl-item{
-        width: 400px !important;
     }
     .home .home-slider .item .content p {
         color: #fff;
@@ -706,30 +706,6 @@ footer .credit span{
         width: 50rem;
     }
     .arrival {
-        width: 105%;
-    }
-    .feature {
-        background: linear-gradient(165deg, #fff 50%, var(--purple) 50.1%);
-        padding-bottom: 2rem;
-        width: 105%;
-    }
-    .gallery {
-        width: 105%;
-    }
-    .deal {
-        width: 105%;
-    }
-    .newsletter {
-        background: linear-gradient(var(--purple),var(--purple)),url(../images/deal01.jpg)no-repeat;
-        background-blend-mode: multiply;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        padding: 4rem 1rem;
-        text-align: center;
-        width: 105%;
-    }
-    footer{
         width: 105%;
     }
 }
