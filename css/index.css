@@ -674,32 +674,41 @@ footer .credit span{
 
 @media screen and (max-width: 360px){
     header{
-        width: 104%;
+        width: 105%;
+    }
+    header .header-2 .navbar ul {
+        flex-flow: column;
+        background-color: var(--purple);
+        border: .2rem solid #fff;
+        box-shadow: 0 0.3rem 0.5rem #000;
+        padding: 4rem 0;
+        width: 27rem;
+        margin-top: 22%;
     }
     .home{
-        width: 104%;
+        width: 105%;
     }
     .owl-item .cloned,
     .owl-item .active{
-        width: 360px !important;
+        width: 370px !important;
     }
     .arrival {
         min-height: 100vh;
-        width: 104%;
+        width: 105%;
     }
     .feature {
         min-height: 100vh;
         background: linear-gradient(165deg, #fff 50%, var(--purple) 50.1%);
         padding-bottom: 2rem;
-        width: 104%;
+        width: 105%;
     }
     .gallery {
         min-height: 100vh;
-        width: 104%;
+        width: 105%;
     }
     .deal {
         min-height: 100vh;
-        width: 104%;
+        width: 105%;
     }
     .newsletter {
         background: linear-gradient(var(--purple),var(--purple)),url(../images/deal01.jpg)no-repeat;
@@ -709,9 +718,9 @@ footer .credit span{
         background-attachment: fixed;
         padding: 4rem 1rem;
         text-align: center;
-        width: 104%;
+        width: 105%;
     }
     footer{
-        width: 104%;
+        width: 105%;
     }
 }
