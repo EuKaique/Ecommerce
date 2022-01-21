@@ -672,7 +672,7 @@ footer .credit span{
     color: var(--purple);
 }
 
-@media screen and (max-width: 360px){
+@media screen and (max-width: 420px) and (min-height: 360px){
     header{
         width: 105%;
     }
@@ -695,7 +695,7 @@ footer .credit span{
         width: 105%;
     }
     .owl-item{
-        width: 420px !important;
+        width: 400px !important;
     }
     .home .home-slider .item .content p {
         color: #fff;
@@ -706,21 +706,17 @@ footer .credit span{
         width: 50rem;
     }
     .arrival {
-        min-height: 100vh;
         width: 105%;
     }
     .feature {
-        min-height: 100vh;
         background: linear-gradient(165deg, #fff 50%, var(--purple) 50.1%);
         padding-bottom: 2rem;
         width: 105%;
     }
     .gallery {
-        min-height: 100vh;
         width: 105%;
     }
     .deal {
-        min-height: 100vh;
         width: 105%;
     }
     .newsletter {
