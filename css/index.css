@@ -712,7 +712,7 @@ footer .credit span{
         align-items: center;
         justify-content: space-between;
         padding: 1.5rem;
-        width: 112%;
+        width: 117%;
         z-index: 1000;
     }
     .home .home-slider .item .content p {
@@ -733,9 +733,9 @@ footer .credit span{
         display: none !important;
     }
     .newsletter{
-        width: 115%;
+        width: 119%;
     }
     footer{
-        width: 119%;
+        width: 123%;
     }
 }
