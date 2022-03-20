@@ -9,8 +9,8 @@
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     text-transform: capitalize;
+    box-sizing: border-box;
     text-decoration: none;
     transition: all .2s cubic-bezier(.37, 1.14, .26, 1.24);
 }
@@ -673,9 +673,16 @@ footer .credit span{
 }
 
 @media screen and (max-width: 420px) and (min-height: 360px){
-    html,body{
-        margin: 0 !important;
-        width: 104%;
+    *{
+        box-sizing: content-box;
+    }
+    .icons{
+        position: relative;
+        right: 5%;
+    }
+    .home,
+    .home img{
+        width: 445px;
     }
     .home .home-slider .item .content h3 {
         color: #fff;
@@ -705,7 +712,19 @@ footer .credit span{
         margin-left: -5% !important;
         width: 50rem;
     }
-    .arrival {
-        width: 105%;
+    .arrival,
+    .feature,
+    .gallery,
+    .deal{
+        width: 445px;
+    }
+    .icons-container{
+        margin-left: 9%;
+    }
+    .newsletter{
+        width: 102%;
+    }
+    footer{
+        width: 104%;
     }
 }
