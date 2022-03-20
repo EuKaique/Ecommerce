@@ -730,7 +730,7 @@ footer .credit span{
         width: 445px;
     }
     .icons-container{
-        display: none;
+        display: none !important;
     }
     .newsletter{
         width: 115%;
