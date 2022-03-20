@@ -678,7 +678,7 @@ footer .credit span{
     }
     .icons{
         position: relative;
-        right: 5%;
+        right: 16%;
     }
     .home,
     .home img{
@@ -704,13 +704,24 @@ footer .credit span{
         left: 45%;
         opacity: 1;
     }
+    header .header-1 .form-container form #search {
+        height: 3.8rem;
+    }
+    header .header-1, header .header-2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem;
+        width: 112%;
+        z-index: 1000;
+    }
     .home .home-slider .item .content p {
         color: #fff;
         font-size: 2rem;
         padding: 2rem 8rem;
         right: 5%;
         margin-left: -5% !important;
-        width: 50rem;
+        width: 40rem;
     }
     .arrival,
     .feature,
@@ -719,12 +730,12 @@ footer .credit span{
         width: 445px;
     }
     .icons-container{
-        margin-left: 9%;
+        display: none;
     }
     .newsletter{
-        width: 102%;
+        width: 115%;
     }
     footer{
-        width: 104%;
+        width: 119%;
     }
 }
