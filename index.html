@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercado Rápido</title>
     <!--Logo na página-->
     <link rel="icon" href="images/shopping-cart.svg">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <!--Owl Carousel CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />    
     <!--Font awesome-->
@@ -20,15 +21,12 @@
         <div class="header-1">
             <a href="#" class="logo"><img src="images/shopping-cart.svg" alt=""><i>Mercado rápido</i></a>
             <div class="form-container">
-                <form action="">
-                    <input type="search" placeholder="O que você procura?" id="search" />
-                    <label for="search" class="fas fa-search"></label>
-                </form>
+                <p class="demo-notice">Site demonstrativo: preços ilustrativos; busca, compras, favoritos e conta indisponíveis.</p>
             </div>
         </div>
         <div class="header-2">
-            <div id="menu" class="fas fa-bars"></div>
-            <nav class="navbar">
+            <button id="menu" class="fas fa-bars" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-navigation"></button>
+            <nav class="navbar" id="main-navigation">
                 <ul>
                     <li><a href="#home" class="active">Início</a></li>
                     <li><a href="#arrival">Novidades</a></li>
@@ -37,42 +35,38 @@
                     <li><a href="#deal">Promoções</a></li>
                 </ul>
             </nav>
-            <div class="icons">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-shopping-cart"></a>
-                <a href="#" class="fas fa-user"></a>
-            </div>
         </div>
     </header>
 
     <!--Seção de início-->
     <section class="home" id="home">
-        <div class="home-slider owl-carousel">
+        <div class="home-slider owl-carousel" id="home-carousel">
             <div class="item">
-                <img src="images/img01.jpg" alt="">
+                <img src="images/img01.jpg" alt="" width="3028" height="1710">
                 <div class="content">
                     <h3>Mais recentes</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt incidunt, et qui quasi voluptatum veritatis corrupti, labore corporis quidem ratione impedit expedita pariatur, dignissimos obcaecati neque atque. Soluta, possimus ex.</p>
-                    <a href=""><button class="btn">Descubra</button></a>
+                    <p>Conheça os produtos em destaque, de eletrônicos a roupas e acessórios.</p>
+                    <a href="#arrival" class="btn">Ver novidades</a>
                 </div>
             </div>
             <div class="item">
-                <img src="images/img02.jpg" alt="">
+                <img src="images/img02.jpg" alt="" width="626" height="417">
                 <div class="content">
                     <h3>Sapatos da moda</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt incidunt, et qui quasi voluptatum veritatis corrupti, labore corporis quidem ratione impedit expedita pariatur, dignissimos obcaecati neque atque. Soluta, possimus ex.</p>
-                    <a href=""><button class="btn">Descubra</button></a>
+                    <p>Explore os tênis apresentados na nossa seleção de produtos.</p>
+                    <a href="#gallery" class="btn">Ver produtos</a>
                 </div>
             </div>
             <div class="item">
-                <img src="images/img03.jpg" alt="">
+                <img src="images/img03.jpg" alt="" width="626" height="417">
                 <div class="content">
                     <h3>Você encontra tudo aqui</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt incidunt, et qui quasi voluptatum veritatis corrupti, labore corporis quidem ratione impedit expedita pariatur, dignissimos obcaecati neque atque. Soluta, possimus ex.</p>
-                    <a href=""><button class="btn">Descubra</button></a>
+                    <p>Veja celulares, notebooks, fones de ouvido e outros produtos da vitrine.</p>
+                    <a href="#gallery" class="btn">Ver produtos</a>
                 </div>
             </div>    
         </div>
+        <button type="button" class="carousel-toggle" aria-controls="home-carousel" hidden>Pausar apresentação</button>
     </section>
 
     <!--Seção de novidades-->
@@ -81,12 +75,12 @@
         <div class="box-container">
             <div class="box">
                 <div class="image">
-                    <img src="images/arr_img1.jpg" alt="">
+                    <img src="images/arr_img1.jpg" alt="Smart TV" width="612" height="408" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Smart TV</h3>
                     <div class="subInfo">
-                        <strong class="price">R$1359 <span>R$1750</span></strong>
+                        <strong class="price">R$ 1.359,00 <span>R$ 1.750,00</span></strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -96,20 +90,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="overlay">
-                    <a href="#" style="--i:1;" class="fas fa-heart"></a>
-                    <a href="#" style="--i:2;" class="fas fa-shopping-cart"></a>
-                    <a href="#" style="--i:3;" class="fas fa-search"></a>
-                </div>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="images/arr_img2.jpg" alt="">
+                    <img src="images/arr_img2.jpg" alt="PlayStation 4" width="626" height="367" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Playstation 4</h3>
                     <div class="subInfo">
-                        <strong class="price">R$1999 <span>R$2200</span></strong>
+                        <strong class="price">R$ 1.999,00 <span>R$ 2.200,00</span></strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -119,20 +108,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="overlay">
-                    <a href="#" style="--i:1;" class="fas fa-heart"></a>
-                    <a href="#" style="--i:2;" class="fas fa-shopping-cart"></a>
-                    <a href="#" style="--i:3;" class="fas fa-search"></a>
-                </div>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="images/arr_img3.jpg" alt="">
+                    <img src="images/arr_img3.jpg" alt="Tênis" width="604" height="413" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Tênis</h3>
                     <div class="subInfo">
-                        <strong class="price">R$279 <span>R$319</span></strong>
+                        <strong class="price">R$ 279,00 <span>R$ 319,00</span></strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -142,20 +126,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="overlay">
-                    <a href="#" style="--i:1;" class="fas fa-heart"></a>
-                    <a href="#" style="--i:2;" class="fas fa-shopping-cart"></a>
-                    <a href="#" style="--i:3;" class="fas fa-search"></a>
-                </div>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="images/arr_img4.jpg" alt="">
+                    <img src="images/arr_img4.jpg" alt="Smartphone" width="500" height="500" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Smart Phone</h3>
                     <div class="subInfo">
-                        <strong class="price">R$929 <span>R$1110</span></strong>
+                        <strong class="price">R$ 929,00 <span>R$ 1.110,00</span></strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -165,20 +144,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="overlay">
-                    <a href="#" style="--i:1;" class="fas fa-heart"></a>
-                    <a href="#" style="--i:2;" class="fas fa-shopping-cart"></a>
-                    <a href="#" style="--i:3;" class="fas fa-search"></a>
-                </div>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="images/arr_img5.jpg" alt="">
+                    <img src="images/arr_img5.jpg" alt="Camisa" width="578" height="431" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Camisa</h3>
                     <div class="subInfo">
-                        <strong class="price">R$39 <span>R$69</span></strong>
+                        <strong class="price">R$ 39,00 <span>R$ 69,00</span></strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -187,21 +161,16 @@
                             <i class="fas fa-star-half"></i>
                         </div>
                     </div>
-                </div>
-                <div class="overlay">
-                    <a href="#" style="--i:1;" class="fas fa-heart"></a>
-                    <a href="#" style="--i:2;" class="fas fa-shopping-cart"></a>
-                    <a href="#" style="--i:3;" class="fas fa-search"></a>
                 </div>
             </div>
             <div class="box">
                 <div class="image">
-                    <img src="images/arr_img6.jpg" alt="">
+                    <img src="images/arr_img6.jpg" alt="Caixa de som" width="612" height="408" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Caixa de som</h3>
                     <div class="subInfo">
-                        <strong class="price">R$200 <span>R$239</span></strong>
+                        <strong class="price">R$ 200,00 <span>R$ 239,00</span></strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -210,11 +179,6 @@
                             <i class="fas fa-star-half"></i>
                         </div>
                     </div>
-                </div>
-                <div class="overlay">
-                    <a href="#" style="--i:1;" class="fas fa-heart"></a>
-                    <a href="#" style="--i:2;" class="fas fa-shopping-cart"></a>
-                    <a href="#" style="--i:3;" class="fas fa-search"></a>
                 </div>
             </div>
         </div>
@@ -226,13 +190,13 @@
         <div class="row">
             <div class="image-container">
                 <div class="big-image">
-                    <img src="images/watch1.jpg" alt="">
+                    <img src="images/watch1.jpg" alt="Relógio inteligente, imagem 1" width="500" height="500" loading="lazy">
                 </div>
                 <div class="small-image">
-                    <img class="image-active    " src="images/watch1.jpg" alt="">
-                    <img src="images/watch2.jpg" alt="">
-                    <img src="images/watch3.jpg" alt="">
-                    <img src="images/watch4.jpg" alt="">
+                    <button type="button" class="image-active" aria-label="Ver imagem 1 do relógio" aria-pressed="true"><img src="images/watch1.jpg" alt="" width="500" height="500" loading="lazy"></button>
+                    <button type="button" aria-label="Ver imagem 2 do relógio" aria-pressed="false"><img src="images/watch2.jpg" alt="" width="500" height="500" loading="lazy"></button>
+                    <button type="button" aria-label="Ver imagem 3 do relógio" aria-pressed="false"><img src="images/watch3.jpg" alt="" width="500" height="500" loading="lazy"></button>
+                    <button type="button" aria-label="Ver imagem 4 do relógio" aria-pressed="false"><img src="images/watch4.jpg" alt="" width="500" height="500" loading="lazy"></button>
                 </div>
             </div>
             <div class="content">
@@ -243,11 +207,11 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                    <span>(500+) reviews</span>
+                    <span>Avaliação ilustrativa</span>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, at!</p>
-                <strong class="price">R$200 <span>R$239</span></strong>
-                <a href="#"><button class="btn">Comprar </button></a>
+                <p>Confira as imagens do relógio inteligente selecionando as miniaturas.</p>
+                <strong class="price">R$ 200,00 <span>R$ 239,00</span></strong>
+                <p class="purchase-notice">Compra indisponível nesta demonstração.</p>
             </div>
         </div>
     </section>
@@ -256,21 +220,21 @@
     <section class="gallery" id="gallery">
         <h1 class="heading"><span>Produtos</span></h1>
         <ul class="controls">
-            <li class="btn button-active" data-filter="all">Tudo</li>
-            <li class="btn" data-filter="phone">Celular</li>
-            <li class="btn" data-filter="laptop">Notebooks<li>
-            <li class="btn" data-filter="headphone">Fone</li>
-            <li class="btn" data-filter="shoes">Tênis</li>
+            <li><button type="button" class="btn button-active" data-filter="all" aria-pressed="true">Tudo</button></li>
+            <li><button type="button" class="btn" data-filter="phone" aria-pressed="false">Celular</button></li>
+            <li><button type="button" class="btn" data-filter="laptop" aria-pressed="false">Notebooks</button></li>
+            <li><button type="button" class="btn" data-filter="headphone" aria-pressed="false">Fone</button></li>
+            <li><button type="button" class="btn" data-filter="shoes" aria-pressed="false">Tênis</button></li>
         </ul>
         <div class="image-container">
             <div class="box phone">
                 <div class="image">
-                    <img src="images/g_img1.jpg" alt="">
+                    <img src="images/g_img1.jpg" alt="Smartphone Galaxy" width="500" height="500" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>SmartPhone Galaxy</h3>
                     <div class="subInfo">
-                        <strong class="price">R$789</strong>
+                        <strong class="price">R$ 789,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -283,12 +247,12 @@
             </div>
             <div class="box phone">
                 <div class="image">
-                    <img src="images/g_img2.jpg" alt="">
+                    <img src="images/g_img2.jpg" alt="Smartphones Samsung" width="500" height="499" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>SmartPhones Samsung</h3>
                     <div class="subInfo">
-                        <strong class="price">R$1329</strong>
+                        <strong class="price">R$ 1.329,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -301,12 +265,12 @@
             </div>
             <div class="box laptop">
                 <div class="image">
-                    <img src="images/g_img3.jpg" alt="">
+                    <img src="images/g_img3.jpg" alt="Notebook Lenovo" width="559" height="446" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Notebook Lenovo</h3>
                     <div class="subInfo">
-                        <strong class="price">R$3379</strong>
+                        <strong class="price">R$ 3.379,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -319,12 +283,12 @@
             </div>
             <div class="box shoes">
                 <div class="image">
-                    <img src="images/g_img4.jpg" alt="">
+                    <img src="images/g_img4.jpg" alt="Tênis Puma" width="612" height="408" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Tênis Puma</h3>
                     <div class="subInfo">
-                        <strong class="price">R$129</strong>
+                        <strong class="price">R$ 129,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -337,12 +301,12 @@
             </div>
             <div class="box laptop">
                 <div class="image">
-                    <img src="images/g_img5.jpg" alt="">
+                    <img src="images/g_img5.jpg" alt="Notebook Dell" width="626" height="391" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Laptop Dell</h3>
                     <div class="subInfo">
-                        <strong class="price">R$2459</strong>
+                        <strong class="price">R$ 2.459,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -355,12 +319,12 @@
             </div>
             <div class="box headphone">
                 <div class="image">
-                    <img src="images/g_img6.jpg" alt="">
+                    <img src="images/g_img6.jpg" alt="Fone de ouvido Beat" width="499" height="499" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Headphone Beat</h3>
                     <div class="subInfo">
-                        <strong class="price">R$199</strong>
+                        <strong class="price">R$ 199,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -373,12 +337,12 @@
             </div>
             <div class="box shoes">
                 <div class="image">
-                    <img src="images/g_img7.jpg" alt="">
+                    <img src="images/g_img7.jpg" alt="Tênis Nike" width="612" height="408" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Tênis Nike</h3>
                     <div class="subInfo">
-                        <strong class="price">R$109</strong>
+                        <strong class="price">R$ 109,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -391,12 +355,12 @@
             </div>
             <div class="box headphone">
                 <div class="image">
-                    <img src="images/g_img8.jpg" alt="">
+                    <img src="images/g_img8.jpg" alt="Fone de ouvido Monster" width="612" height="408" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Headphone Monster</h3>
                     <div class="subInfo">
-                        <strong class="price">R$339</strong>
+                        <strong class="price">R$ 339,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -409,12 +373,12 @@
             </div>
             <div class="box headphone">
                 <div class="image">
-                    <img src="images/g_img9.jpg" alt="">
+                    <img src="images/g_img9.jpg" alt="Fone de ouvido Simple" width="499" height="499" loading="lazy">
                 </div>
                 <div class="info">
                     <h3>Headphone Simple</h3>
                     <div class="subInfo">
-                        <strong class="price">R$149</strong>
+                        <strong class="price">R$ 149,00</strong>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -433,42 +397,42 @@
         <h1 class="heading"><span>Melhores promoções</span></h1>
         <div class="box-container">
             <div class="box">
-                <img class="box-image" src="images/deal01.jpg" alt="">
+                <img class="box-image" src="images/deal01.jpg" alt="" width="626" height="352" loading="lazy">
                 <div class="content">
                     <h3>Últimos notebooks</h3>
-                    <p>com até 25% de desconto</p>
-                    <a href="#"><button class="btn">saiba mais</button></a>
+                    <p>Veja os notebooks da vitrine</p>
+                    <a href="#gallery" class="btn">Ver produtos</a>
                 </div>
             </div>
             <div class="box">
-                <img src="images/deal02.jpg" alt="">
+                <img src="images/deal02.jpg" alt="" width="626" height="417" loading="lazy">
                 <div class="content">
                     <h3>Novos Headphones</h3>
-                    <p>com até 10% de desconto</p>
-                    <a href="#"><button class="btn">saiba mais</button></a>
+                    <p>Veja os fones da vitrine</p>
+                    <a href="#gallery" class="btn">Ver produtos</a>
                 </div>
             </div>
         </div>
         <div class="icons-container">
             <div class="icons">
                 <i class="fas fa-shipping-fast"></i>
-                <h3>entrega rápida</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quaerat voluptate</p>
+                <h3>Entrega</h3>
+                <p>Opções de entrega indisponíveis nesta demonstração.</p>
             </div>
             <div class="icons">
                 <i class="fas fa-user-clock"></i>
-                <h3>Suporte 24 x 7</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quaerat voluptate</p>
+                <h3>Suporte</h3>
+                <p>Atendimento indisponível nesta demonstração.</p>
             </div>
             <div class="icons">
                 <i class="fas fa-money-check-alt"></i>
-                <h3>Pagamento facilitado</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quaerat voluptate</p>
+                <h3>Pagamento</h3>
+                <p>Pagamentos não são processados nesta demonstração.</p>
             </div>
             <div class="icons">
                 <i class="fas fa-box"></i>
-                <h3>Garantia de 6 meses grátis</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad quaerat voluptate</p>
+                <h3>Garantia</h3>
+                <p>As condições de garantia não estão disponíveis nesta demonstração.</p>
             </div>
         </div>
     </section>
@@ -476,11 +440,7 @@
     <!--NEWSLETTER-->
     <section class="newsletter">
         <h1>Informações</h1>
-        <p>entre em contato para obter os descontos e atualizações mais recentes</p>
-        <form action="">
-            <input type="email" placeholder="Digite seu email">
-            <input type="submit" class="btn">
-        </form>
+        <p>Cadastro para novidades indisponível nesta demonstração.</p>
     </section>
 
     <!--RODAPÉ-->
@@ -488,15 +448,15 @@
         <div class="box-container">
             <div class="box">
                 <a href="#" class="logo"><img src="images/shopping-cart.svg" alt=""><i>Mercado rápido</i></a>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto odio, molestias impedit quaerat quis libero illum sed aliquid animi est!</p>
+                <p>Uma vitrine demonstrativa com exemplos de produtos e preços ilustrativos.</p>
             </div>
             <div class="box">
                 <h3>Links</h3>
-                <a href="#">Inicio</a>
-                <a href="#">Novidades</a>
-                <a href="#">Ofertas</a>
-                <a href="#">Produtos</a>
-                <a href="#">Promoções</a>
+                <a href="#home">Início</a>
+                <a href="#arrival">Novidades</a>
+                <a href="#feature">Ofertas</a>
+                <a href="#gallery">Produtos</a>
+                <a href="#deal">Promoções</a>
             </div>
             <div class="box">
                 <h3>Fale conosco</h3>
@@ -518,10 +478,10 @@
     </footer>
 
     <!--JQuery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
     <!--Owl Carousel Script-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
     <!--Arquivo JS-->
-    <script src="./js/index.js"></script>
+    <script defer src="./js/index.js"></script>
 </body>
 </html>

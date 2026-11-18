@@ -1,26 +1,37 @@
 /* CONFIGURAÇÃO GERAL DO SITE */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
-
 :root{
     --purple:#5f22cf;
 }
 *{
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     text-transform: capitalize;
     box-sizing: border-box;
     text-decoration: none;
-    transition: all .2s cubic-bezier(.37, 1.14, .26, 1.24);
 }
 *::selection{
     background: #ff3300;    
     color: #fff;
 }
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+:is(a, button, input, select, textarea):focus-visible{
+    outline: .3rem solid #ff9900;
+    outline-offset: .2rem;
+}
 html{
     font-size: 62.5%;
-    overflow-x: hidden;
 }
 .btn{
     height: 4rem;
@@ -30,11 +41,23 @@ html{
     font-size: 2rem;
     cursor: pointer;
     border: none;
-    outline: none;
 }
 .btn:hover{
     letter-spacing: .2rem;
     opacity: .8;
+}
+.btn{
+    transition: opacity .2s, letter-spacing .2s;
+}
+header .header-2 .navbar a,
+.feature .small-image button,
+.gallery .image-container .box .image{
+    transition: color .2s, border-color .2s, background-color .2s;
+}
+a.btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 .heading{
     padding-top: 7rem;
@@ -64,6 +87,15 @@ header .header-1 .logo{
     font-size: 2rem;
     color: #555;
 }
+.demo-notice{
+    color: #333;
+    font-size: 1.4rem;
+    text-align: right;
+}
+.feature .row .content .purchase-notice{
+    width: auto;
+    font-size: 1.6rem;
+}
 header .header-1 .logo img{
     width: 4rem;
     height: 4rem;
@@ -74,7 +106,6 @@ header .header-1 .form-container form{
 header .header-1 .form-container form #search{
     height: 4rem;
     width: 50rem;
-    outline: none;
     border: 1px solid #777;
     font-size: 1.5rem;
     padding: 0 1rem;
@@ -84,20 +115,16 @@ header .header-1 .form-container form #search{
 header .header-1 .form-container form #search:focus{
     border-color: var(--purple);
 }
-header .header-1 .form-container form label{
+header .header-1 .form-container form .search-icon{
     height: 4rem;
     width: 5rem;
     text-align: center;
     line-height: 4rem;
     font-size: 2rem;
-    cursor: pointer;
     border-top-right-radius: 5rem;
     border-bottom-right-radius: 5rem;
     background: var(--purple);
     color: #fff;
-}
-header .header-1 .form-container form label:hover{
-    color: orange;
 }
 header .header-2{
     background-color: var(--purple);
@@ -132,6 +159,14 @@ header .header-2 #menu{
     font-size: 2rem;
     cursor: pointer;
     display: none;
+    border: 0;
+    background: transparent;
+}
+header .header-2 #menu:focus-visible,
+.feature .small-image button:focus-visible,
+.gallery .controls button:focus-visible{
+    outline: .3rem solid orange;
+    outline-offset: .3rem;
 }
 header .header-2.header-active{
     position: fixed;
@@ -159,6 +194,8 @@ header .header-2.header-active{
         box-shadow: 0 0 0 100vh rgba(0, 0, 0, .3);
         z-index: 10000;
         opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s, visibility .2s;
     }
     header .header-2 .navbar ul{
         flex-flow: column;
@@ -185,6 +222,7 @@ header .header-2.header-active{
         top: 12%;
         left: 1%;
         opacity: 1;
+        visibility: visible;
     }
     .arrival .box-container{
         width: auto;
@@ -234,6 +272,31 @@ header .header-2.header-active{
 .home .home-slider .item{
     position: relative;
 }
+.carousel-toggle{
+    display: block;
+    margin: 1rem auto;
+    padding: .8rem 1.2rem;
+    border: .2rem solid var(--purple);
+    background: #fff;
+    color: var(--purple);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+.carousel-toggle[hidden]{
+    display: none;
+}
+@media (prefers-reduced-motion: reduce){
+    .btn,
+    header .header-2 .navbar,
+    header .header-2 .navbar a,
+    .feature .small-image button,
+    .gallery .image-container .box .image{
+        transition: none;
+    }
+    .home .owl-stage{
+        transition-duration: 0s !important;
+    }
+}
 .home .home-slider .item img{
     height: 100vh;
     object-fit: cover;
@@ -261,7 +324,6 @@ header .header-2.header-active{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    outline: none;
 }
 .home .owl-carousel .owl-prev{
     left: 1.3rem;
@@ -301,6 +363,8 @@ header .header-2.header-active{
 }
 .arrival .box-container .box .image img{
     height: 100%;
+    width: auto;
+    max-width: 100%;
     object-fit: cover;
 }
 .arrival .box-container .box .info h3{
@@ -340,7 +404,8 @@ header .header-2.header-active{
     justify-content: center;
     transform: scale(0);
 }
-.arrival .box-container .box:hover .overlay{
+.arrival .box-container .box:hover .overlay,
+.arrival .box-container .box:focus-within .overlay{
     transform: scale(1);
 }
 .arrival .box-container .box .overlay a{
@@ -355,8 +420,17 @@ header .header-2.header-active{
 .arrival .box-container .box .overlay a:hover{
     color: var(--purple);
 }
-.arrival .box-container .box:hover .overlay a{
+.arrival .box-container .box:hover .overlay a,
+.arrival .box-container .box:focus-within .overlay a{
     transform: translateY(0rem);
+}
+@media (hover: none){
+    .arrival .box-container .box .overlay{
+        transform: scale(1);
+    }
+    .arrival .box-container .box .overlay a{
+        transform: translateY(0);
+    }
 }
 .feature{
     min-height: 100vh;
@@ -381,6 +455,8 @@ header .header-2.header-active{
 }
 .feature .row .image-container .big-image img{
     height: 30rem;
+    width: auto;
+    max-width: 100%;
     margin: 2rem 0;
     filter: drop-shadow(0 .1rem .5rem #000);
 }
@@ -389,15 +465,21 @@ header .header-2.header-active{
     justify-content: center;
     flex-flow: column wrap;
 }
-.feature .row .image-container .small-image img{
+.feature .row .image-container .small-image button{
     height: 6rem;
     padding: 1rem;
     margin: 1rem;
     border: .1rem solid #777;
     cursor: pointer;
+    background: #fff;
 }
-.feature .row .image-container .small-image img.image-active,
-.feature .row .image-container .small-image img:hover{
+.feature .row .image-container .small-image button img{
+    display: block;
+    height: 100%;
+    width: auto;
+}
+.feature .row .image-container .small-image button.image-active,
+.feature .row .image-container .small-image button:hover{
     border: .2rem solid var(--purple);
 }
 .feature .row .content{
@@ -477,6 +559,8 @@ header .header-2.header-active{
 }
 .gallery .image-container .box .image img{
     height: 100%;
+    width: auto;
+    max-width: 100%;
     object-fit: cover;
 }
 .gallery .image-container .box:hover .image{
@@ -612,7 +696,6 @@ header .header-2.header-active{
     height: 100%;
     width: 80%;
     padding: 0 1rem;
-    outline: none;
     border: none;
     background: none;
     font-size: 2rem;
@@ -672,18 +755,33 @@ footer .credit span{
     color: var(--purple);
 }
 
-@media screen and (max-width: 420px) and (min-height: 360px){
-    *{
-        box-sizing: content-box;
+@media (max-width: 768px){
+    .home .home-slider .item{
+        display: flex;
+        align-items: center;
+        min-height: 55vh;
+        min-height: 55svh;
+        padding: 4rem 5%;
     }
-    .icons{
+    .home .home-slider .item img{
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .home .home-slider .item .content{
         position: relative;
-        right: 16%;
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 100%;
     }
-    .home,
-    .home img{
-        width: 445px;
+    .home .home-slider .item .content p{
+        max-width: 100%;
     }
+}
+
+@media screen and (max-width: 420px) and (min-height: 360px){
     .home .home-slider .item .content h3 {
         color: #fff;
         text-shadow: 0 0.3rem 0.5rem #000;
@@ -706,36 +804,5 @@ footer .credit span{
     }
     header .header-1 .form-container form #search {
         height: 3.8rem;
-    }
-    header .header-1, header .header-2 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.5rem;
-        width: 117%;
-        z-index: 1000;
-    }
-    .home .home-slider .item .content p {
-        color: #fff;
-        font-size: 2rem;
-        padding: 2rem 8rem;
-        right: 5%;
-        margin-left: -5% !important;
-        width: 40rem;
-    }
-    .arrival,
-    .feature,
-    .gallery,
-    .deal{
-        width: 445px;
-    }
-    .icons-container{
-        display: none !important;
-    }
-    .newsletter{
-        width: 119%;
-    }
-    footer{
-        width: 123%;
     }
 }
